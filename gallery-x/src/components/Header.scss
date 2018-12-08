@@ -1,0 +1,39 @@
+.headerContainer {
+  position: relative;
+  height: 20vh;
+  width: 100%;
+  background-color: #4b4e51;
+  display: flex;
+  justify-content: center;
+}
+.headShot {
+  position: absolute;
+  top: 2vh;
+  left: 1.5vw;
+}
+h1, li {
+  color: white;
+  list-style: none;
+}
+.headerContent {
+  display: flex;
+  flex-direction: column;
+}
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  li {
+    margin-right: 2vw;
+  }
+}
+.rightLinks {
+  display: flex;
+  position: absolute;
+  right: 1.5vw;
+  bottom: 1.5vh;
+}
+.linkLeft {
+  position: absolute;
+  left: 20vw;
+  bottom: 1.5vh;
+}

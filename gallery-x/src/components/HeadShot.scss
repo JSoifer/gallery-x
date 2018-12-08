@@ -1,4 +1,10 @@
-.artistImage {
+
+.headContainer {
+  height: 27vh;
+  width: 15vw;
+  background-color: lightgreen;
   background-image: url('../assets/images/xia.JPG');
-  width: 3vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+
 }
