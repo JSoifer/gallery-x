@@ -1,9 +1,10 @@
 import React from 'react';
+import './Slide.scss';
 
 
-function Slide() {
+const Slide = () => {
   return(
-    <div>
+    <div className='slide'>
       Slide
     </div>
 
