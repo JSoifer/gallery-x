@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Slider.scss';
+import Slide from './Slide';
+import RightArrow from './RightArrow';
+import LeftArrow from './LeftArrow';
 
 
 export default class Slider extends Component  {
@@ -9,10 +12,22 @@ export default class Slider extends Component  {
     this.state = {}
   }
 
+  goToPrevSlide = () => {
+
+  }
+
+  goToNextSlide = () => {
+
+  }
+
   render() {
     return(
       <div className='slider'>
-        Slider
+        <Slide />
+
+
+        <LeftArrow goToPrevSlide={this.goToPrevSlide}/>
+        <RightArrow goToNextSlide={this.goToNextSlide}/>
       </div>
 
     );
