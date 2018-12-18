@@ -10,7 +10,8 @@ import LeftArrow from './LeftArrow';
 export default class Slider extends Component  {
   constructor(props) {
     super(props);
-
+    this.goToNextSlide = this.goToNextSlide.bind(this);
+    this.goToPrevSlide = this.goToPrevSlide.bind(this);
     this.state = {
       images: [
         "https://previews.dropbox.com/p/thumb/AAS5LyiA3I9KOIFWGNTHzxN6RInVsP464vdWMFegFhqNeDmRd88KyaI2m8vbQqDNQJzskdRGoA4WzB5k2W2JOJ7IbVkomIv4969solmk9mAeIRRMNAOF8Amlbn2-zaAhvINBnTYd5GOtuqkcrW_Q9ZVG2wLILBjjtaAhNS7L9bRZgrwJtgvY3yKMqUI5zfaqg1yDUNwO_spbnwt5wM7OuBeBLxNcFjqzyXTo7v0QEswttg/p.jpeg?size=1600x1200&size_mode=3",
@@ -27,45 +28,48 @@ export default class Slider extends Component  {
     }
   }
 
-  goToPrevSlide = () => {
-    
+  goToPrevSlide() {
+    const lastIndex = this.state.images.length - 1;
+    const { currentIndex } = this.state;
+    const shouldResetIndex = currentIndex === 0;
+    const index =  shouldResetIndex ? lastIndex : currentIndex - 1;
 
+    this.setState({
+      currentIndex: index
+    });
   }
 
   goToNextSlide = () => {
-    if(this.state.currentIndex === this.state.images.length -1) {
-      return this.setState({
-        currentIndex: 0,
-        translateValue: 0
-      })
-    }
-    this.setState(prevState => ({
-      currentIndex: prevState.currentIndex + 1,
-      translateValue: prevState.translateVlue + -(this.slideWidth())
-    }));
+    const lastIndex = this.state.images.length - 1;
+    const { currentIndex } = this.state;
+    const shouldResetIndex = currentIndex === lastIndex;
+    const index =  shouldResetIndex ? 0 : currentIndex + 1;
+
+    this.setState({
+      currentIndex: index
+    });
   }
 
-  slideWidth = () => {
-    return document.querySelector('.slide').clientWidth
-  }
 
   render() {
+    const styles = {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: '200px',
+      maxWidth: '700px',
+      height: '50vh'
+    };
     return(
-      <div className='slider'>
+      <div className='slider' >
         <LeftArrow
           goToPrevSlide={this.goToPrevSlide}/>
-        <div className='slider-wrapper'
-          style={{
-            transform: `translateX(${this.state.translateValue}px)`,
-            transition: 'transform ease-out 0.45s'
-          }}>
-          {
-            this.state.images.map((image, i) => (
-              <Slide key={i} image={image} />
-            ))
-          }
 
-        </div>
+
+              <Slide image={this.state.images[this.state.currentIndex]} />
+
+
+
         <RightArrow
           goToNextSlide={this.goToNextSlide}/>
       </div>
