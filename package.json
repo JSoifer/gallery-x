@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^5.7.0",
     "font-awesome": "^4.7.0",
     "node": "^11.3.0",
     "node-sass": "^4.10.0",
