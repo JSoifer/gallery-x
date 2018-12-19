@@ -1,5 +1,5 @@
 import React from 'react';
-import './Slide.scss';
+
 
 
 const Slide = ({ image }) => {
@@ -9,7 +9,8 @@ const Slide = ({ image }) => {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '50% 60%',
     width: '100%',
-    height: '700px'
+    height: '60vh',
+    marginBottom: '15vh',
   }
   return(
     <div className='slide' style={styles}>

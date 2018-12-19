@@ -52,14 +52,7 @@ export default class Slider extends Component  {
 
 
   render() {
-    const styles = {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: '200px',
-      maxWidth: '700px',
-      height: '50vh'
-    };
+    
     return(
       <div className='slider' >
         <LeftArrow
