@@ -26,7 +26,7 @@ function Header() {
               <Link to='/archive' style={linkStyle}>View Archived</Link>
             </li>
             <li>
-            <Link to='/upload' style={linkStyle}>Order Print</Link>
+            <Link to='/upload' style={linkStyle}>Upload Art</Link>
           </li>
             <li>Contact</li>
           </div>
