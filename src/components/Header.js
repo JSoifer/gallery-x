@@ -1,25 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import HeadShot from './HeadShot';
 import './Header.scss';
+import { Link } from 'react-router-dom';
 
 function Header() {
+  const linkStyle = {
+    textDecoration: 'none',
+    color: 'white'
+  };
   return(
     <div className='headerContainer'>
       <div className='headShot'>
         <HeadShot />
       </div>
       <div className='headerContent'>
-        <h1>Gallery X</h1>
+        <Link to='/' style={linkStyle}>
+        <h1>Gallery x</h1>
+      </Link>
         <div className='navLinks' >
           <div className='linkLeft'>
             <li>about Xia</li>
           </div>
           <div className='rightLinks'>
-            <li>View Archived</li>
-            <li>Order Print</li>
+            <li>
+              <Link to='/archive' style={linkStyle}>View Archived</Link>
+            </li>
+            <li>
+            <Link to='/upload' style={linkStyle}>Order Print</Link>
+          </li>
             <li>Contact</li>
           </div>
-        </div>    
+        </div>
       </div>
     </div>
   );
